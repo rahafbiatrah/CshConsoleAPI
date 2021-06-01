@@ -15,7 +15,7 @@ namespace CshConsoleAPI
 	{
 		public const string CMD_PROMPED = "\n>";
 		public const string CMD_ECHO = "echo";
-
+		public const string CMD_EXIT = "exit";
 
 
 
@@ -30,6 +30,17 @@ namespace CshConsoleAPI
 				Console.WriteLine(param);
 			}
 			return (true);
+		}
+
+
+		/***
+		* Exit terminates the application.
+		* the command prints the exit messsage.
+		*/
+		public static bool CommandExit(string[] parameters)
+		{
+			Console.WriteLine(CMD_EXIT);
+			return (false);
 		}
 	}
 }
