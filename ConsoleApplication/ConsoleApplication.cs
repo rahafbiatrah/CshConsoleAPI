@@ -22,10 +22,13 @@ namespace CshConsoleAPI
 
          // Assign the echo command function to the command list.
          CommandsApi.CommandAdd(ref pCommands, AppCommands.CMD_ECHO, AppCommands.CommandEcho);
-         CommandsApi.CommandAdd(ref pCommands, AppCommands.CMD_EXIT, AppCommands.CommandExit);
+            CommandsApi.CommandAdd(ref pCommands, AppCommands.CMD_ADD, AppCommands.CommandAdd);
+            CommandsApi.CommandAdd(ref pCommands, AppCommands.CMD_SUB, AppCommands.CommandSub);
+            CommandsApi.CommandAdd(ref pCommands, AppCommands.CMD_MULT, AppCommands.CommandMult);
+            CommandsApi.CommandAdd(ref pCommands, AppCommands.CMD_DIV, AppCommands.CommandDiv);
 
-         // Store user input text.
-         string command_line;
+            // Store user input text.
+            string command_line;
 
          // Continues loop.
          while (running)

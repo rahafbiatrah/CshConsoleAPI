@@ -15,7 +15,10 @@ namespace CshConsoleAPI
 	{
 		public const string CMD_PROMPED = "\n>";
 		public const string CMD_ECHO = "echo";
-		public const string CMD_EXIT = "exit";
+		public const string CMD_ADD = "add";
+		public const string CMD_SUB = "sub";
+		public const string CMD_MULT = "mult";
+		public const string CMD_DIV = "div";
 
 
 
@@ -31,16 +34,63 @@ namespace CshConsoleAPI
 			}
 			return (true);
 		}
-
-
-		/***
-		* Exit terminates the application.
-		* the command prints the exit messsage.
-		*/
-		public static bool CommandExit(string[] parameters)
+		public static bool CommandAdd(string[] parameters)
 		{
-			Console.WriteLine(CMD_EXIT);
-			return (false);
+			int sum = 0;
+			foreach (string param in parameters)
+			{
+				sum += Convert.ToInt32(param);
+
+			}
+			Console.WriteLine(sum);
+			return (true);
 		}
+		public static bool CommandSub(string[] parameters)
+		{
+			int sub = 0;
+			foreach (string param in parameters)
+			{
+				sub = Convert.ToInt32(param);
+				sub--;
+
+			}
+			Console.WriteLine(sub);
+			return (true);
+		}
+		public static bool CommandMult(string[] parameters)
+		{
+			int mult = 1;
+			foreach (string param in parameters)
+			{
+				mult *= Convert.ToInt32(param);
+
+			}
+			Console.WriteLine(mult);
+			return (true);
+		}
+		public static bool CommandDiv(string[] parameters)
+		{
+			double div = 0;
+			bool first = true;
+			foreach (string param in parameters)
+			{
+				if (first)
+				{
+					first = false;
+					div = Convert.ToDouble(param);
+
+				}
+				else
+				{
+					div /= Convert.ToDouble(param);
+				}
+
+
+			}
+			Console.WriteLine(div);
+			return (true);
+		}
+
+	
 	}
 }
